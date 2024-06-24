@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用輸入視窗prompt
+        // 輸入分數
+        
+        let strscore;
+        strscore = prompt('請輸入您的分數');
+        
+        // 將字串轉數值
+        let intScore=Number(strscore);
+        
+        // 檢查是否按了取消
+        if (strscore == null) {
+            console.log('您按了取消');
+        } else if (
+            strscore == '') {
+            console.log('分數不能空白');
+        } else if (intScore > 100 || intScore < 0) {
+            console.log(strscore + '分數不是有效範圍');
+        } else if (intScore >= 60) {
+            console.log('及格');
+        } else if (intScore < 60) {
+            console.log('不及格');
+        } else {
+            //以上條件都不成立
+            console.log('分數輸入err');
+        }
+    </script>
+
+</body>
+
+</html>
