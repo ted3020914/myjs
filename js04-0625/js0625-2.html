@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 血型判斷(大小寫不同)
+        // A=>A型
+        // a=>A型
+
+        // if else if
+
+        let blood = prompt('請輸入您的血型');
+        if (blood == null) {        //是否按了取消
+            console.log('您按了取消');
+        } else {
+            // 按了確定
+            // 1.去除空白後的結果是沒有內容
+            blood = blood.trim();
+            // 2.檢查血型代號
+            if (blood == '') {
+                console.log('血型不能為空白');
+            } else if (blood == 'A' || blood == 'a') {
+                console.log('您的血型為A型');
+            } else if (blood == 'B' || blood == 'b') {
+                console.log('您的血型為B型');
+            } else if (blood == 'AB' || blood == 'ab' || blood == 'Ab' || blood == 'aB') {
+                console.log('您的血型為AB型');
+            } else if (blood == 'O' || blood == 'o') {
+                console.log('您的血型為O型');
+            } else {    //以上都不是
+                console.log('血型輸入ERR');
+            }
+        }
+        // 換行
+        // document.write('<br>');
+
+        // switch
+        let blood2 = prompt('請輸入您的血型');
+
+        if (blood2 == null) {        //是否按了取消
+            document.write('您按了取消');
+        } else {
+            switch (blood2.trim()) {
+                case null:
+                    document.write('您按了取消');
+                    break;
+                case '':
+                    document.write('血型不能為空白');
+                    break;
+                case 'A':
+                case 'a':
+                    document.write('您的血型為A型');
+                    break;
+                case 'B':
+                case 'b':
+                    document.write('您的血型為B型');
+                    break;
+                case 'AB':
+                case 'Ab':
+                case 'aB':
+                case 'ab':
+                    document.write('您的血型為AB型');
+                    break;
+                case 'O':
+                case 'o':
+                    document.write('您的血型為O型');
+                    break;
+                default:    //以上都不是
+                    document.write('血型輸入ERR');
+                    break;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

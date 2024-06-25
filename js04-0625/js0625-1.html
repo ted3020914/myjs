@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 輸入{window.prompt()}星期別代號，顯示星期?
+        //prompt() =>回傳是一個字串型態的結果 
+        // 取消時會回傳空值=>null
+        let a = prompt('請輸入星期別代號:1-7');
+        // lenth()=>資料的長度
+        // trim()去除內容前後多於空白
+        console.log(a.length);
+        
+        switch (a.trim()) {
+            case null:
+                document.write('您按了取消');
+                break;
+            case '':    //沒有填寫任何內容
+                document.write('您尚未填寫代號');
+                break;
+            case '1':
+                document.write('星期一');
+                break;  //結束switch
+            case '2':
+                document.write('星期二');
+                break;
+            case '3':
+                document.write('星期三');
+                break;
+            case '4':
+                document.write('星期四');
+                break;
+            case '5':
+                document.write('星期五');
+                break;
+            case '6':
+                document.write('星期六');
+                break;
+            case '7':
+                document.write('星期天');
+                break;
+            default:
+                //以上條件都不成立
+                document.write('輸入err')
+                //switch中最後一個break，可省略
+                // 建議還是寫上
+                break;  
+        }
+    </script>
+</body>
+
+</html>
