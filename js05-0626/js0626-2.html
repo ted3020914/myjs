@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ex6:請用一個迴圈，找出1-10中，顯示以下結果
+        // 1-10中3的倍數有:3、6、9
+        // 1-10中3的倍數合計為:3+6+9=18
+        // 1-10中5的倍數有:5、10
+        // 1-10中5的倍數合計為:5+10=15
+
+        let str3 = "";
+        let str5 = "";
+        let str3b = ""; //帶有+號的內容
+        let str5b = ""; //帶有+號的內容
+        let tot3 = 0;  //存放3的倍數合計
+        let tot5 = 0;  //存放5的倍數合計
+
+        for (let i = 1; i <= 10; i++) {
+            if (i % 3 === 0) {
+                str3 += i + ' ';
+                str3b = str3b + i   //各別保存(串接) 
+                if (i != 9) {
+                    str3b = str3b + '+';    //不是9的時候，才加上+號
+                }
+                //累計3的倍數
+                tot3 = tot3 + i;
+
+                //演算過程
+                /*
+                i=3 => tot3=tot3+i=0+3=3
+                i=6 => tot3=tot3+i=3+6=9
+                i=9 => tot3=tot3+i=9+9=18
+                */
+
+            } else if (i % 5 === 0) {
+                str5 += i + ' ';
+                str5b = str5b + i   //各別保存(串接) 
+                if (i != 10) {
+                    str5b = str5b + '+';    //不是10的時候，才加上+號
+                }
+                //累計5的倍數
+                tot5 = tot5 + i;
+            }
+
+        }
+        document.write(`1-10中3的倍數有=>${str3}<br>`);
+        document.write(`1-10中3的倍數有=>${str3b}=${tot3}<br>`);
+        document.write(`1-10中3的倍數有=>${str5}<br>`);
+        document.write(`1-10中5的倍數有=>${str5b}=${tot5}<br>`);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ex7:
+        // 彈出輸入視窗
+        // 輸入運算起始值=>1
+        // 輸入運算結束值=>10
+        // 算出奇數和=>25
+        // 算出偶數和=>30
+
+        let sNum = Number(prompt('起始值'));
+        let eNum = Number(prompt('結束值'));
+        // let sNum=prompt('起始值');
+        // sNum = Number(sNum);
+
+// 二數調換過程
+// let a=5;
+// let b=3;
+// let tmp=a;
+// a=b;
+// b=tmp;
+// console.log(a);
+// console.log(b);
+
+//起始值<結束值
+//調換
+if(sNum>eNum){
+    let tmp=sNum;   //大的暫時給tmp
+    sNum=eNum;      //小的給sNum
+    eNum=tmp;       //大的給eNum
+
+}
+
+//起始值<結束值
+        // 奇數和
+        let tot1 = 0;
+        // 偶數和
+        let tot2 = 0;
+        // 起始值>結束值時
+        for (let i = sNum; i <= eNum; i++) {
+            // 奇數和
+            if (i % 2 === 1) {
+                tot1 = tot1 + i;
+            } else {
+                //偶數和
+                tot2 = tot2 + i;
+            }
+        }
+
+        console.log(`${sNum}-${eNum}的奇數和 =>${tot1}`);
+        console.log(`${sNum}-${eNum}的偶數和 =>${tot2}`);
+
+        
+    </script>
+</body>
+
+</html>
