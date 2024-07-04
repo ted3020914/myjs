@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 請設計一個函式，能夠四則運算
+        function calc(a, b, c) {
+            if (c == '+') {
+                document.write(`${a}+${b}=${a + b}`);
+            } else if (c == '-') {
+                document.write(`${a}-${b}=${a - b}`);
+            } else if (c == '*') {
+                document.write(`${a}*${b}=${a * b}`);
+            } else if (c == '/') {
+                document.write(`${a}/${b}=${(a / b).toFixed(2)}`);
+            } else {
+                document.write('運算符號err');
+            }
+        }
+
+        // 使用數入視窗產生任意二數與運算式符號
+        // 字串轉數值 =>Number()
+        // 1.非數字 =>isNaN
+        // 2.多餘空白 =>trim()
+        // 3.取消狀況 =>null
+        let z = prompt('請輸入數字');
+        let x = prompt('請輸入數字');
+        let v = prompt('請輸入四則運算符號(+,-,*,/)');
+
+        if (z == null || x == null || v == null) {
+            document.write('您按了取消');
+        }
+        else if (isNaN(z) || isNaN(x)) {
+            document.write('您輸入非數字!');
+        } else {
+            // 去除多餘空白 => 字串.trim() =>字與字之間的空白不會被刪除
+            // 字串轉數值 =>Number(字串)
+            z = Number(z.trim());
+            x = Number(x.trim());
+        
+        // 最後再呼叫函式
+        calc(z, x, v);
+    }
+    </script>
+</body>
+
+</html>

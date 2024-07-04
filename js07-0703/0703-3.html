@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+function promptAndDisplayScore(num) {
+    let score = Number(prompt(`請輸入第${num}次分數`));
+    let result = chkscore(score);
+    document.write(`分數${num}: ${result}<br>`);
+}
+
+// 分數1
+promptAndDisplayScore(1);
+
+// 分數2
+promptAndDisplayScore(2);
+
+// 分數3
+promptAndDisplayScore(3);
+
+
+    </script>
+</body>
+
+</html>
