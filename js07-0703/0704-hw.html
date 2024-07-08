@@ -29,7 +29,6 @@
         console.log("開始猜數字遊戲！");
 
         let guess;
-        let attempts = 0;
         let min = 1;
         let max = 100;
 
@@ -45,7 +44,7 @@
                 console.log(`${guess} => 太小了（提示：${guess}-${max}）`);
                 min = guess;
             } else {
-                console.log(`${guess} => 猜對了！你用了 ${attempts} 次猜對。`);
+                console.log(`${guess} => 猜對了！`);
             }
         }
 
