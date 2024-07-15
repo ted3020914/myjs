@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [];
+        for (i = 0; i < 6; i++) {
+            r1 = Math.floor(Number(Math.random() * 49+1));
+            result = arr1.indexOf(r1)
+            if (result == -1) {
+                arr1.push(r1);
+            }else{
+                continue;
+                
+            }
+        }
+        arr1.sort((a, b) => {
+            return a - b;
+        }
+        )
+        
+
+        let arr2=[];
+        let r2=Math.floor(Number(Math.random()*49+1));
+        let result1=arr2.includes(r2);
+        if(result1==false){
+            arr2.push(r2);
+        }
+        console.log(`大樂透號碼:`+arr1+`特別號:`+arr2);
+    </script>
+</body>
+
+</html>
