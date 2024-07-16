@@ -9,30 +9,83 @@
 
 <body>
     <script>
+
+        // 大樂透亂數作業
+        // 取出第一區:6個號碼(1-49)
         let arr1 = [];
+        console.log('---for---');
+        /*
         for (i = 0; i < 6; i++) {
-            r1 = Math.floor(Number(Math.random() * 49+1));
-            result = arr1.indexOf(r1)
+            r1 = Math.floor(Number(Math.random() * 49) + 1);  //取亂數
+            result = arr1.indexOf(r1);
             if (result == -1) {
+                // 沒有重複
                 arr1.push(r1);
-            }else{
-                continue;
-                
+            } else {
+                // 有重複
+            console.log(`在編號${i}位置，${r1}重複了`);
+                i--;    //因為重複，所以編號位置要-1
+
             }
         }
         arr1.sort((a, b) => {
             return a - b;
         }
         )
-        
 
-        let arr2=[];
-        let r2=Math.floor(Number(Math.random()*49+1));
-        let result1=arr2.includes(r2);
-        if(result1==false){
-            arr2.push(r2);
+
+        
+        let r2 = Math.floor(Number(Math.random() * 49 )+ 1);
+        
+        console.log(`大樂透號碼:` + arr1 + `特別號:` + r2);
+*/
+
+        console.log('---while---');
+        /*
+                let i = 0;
+                while (i < 6) {
+                    r1 = Math.floor(Number(Math.random() * 49) + 1);  //取亂數
+                    result = arr1.indexOf(r1);
+                    if (result == -1) {
+                        // 沒有重複
+                        arr1.push(r1);
+                        i++;
+                    } 
+                }
+        
+                arr1.sort((a, b) => {
+                    return a - b;
+                }
+                )
+        console.log(arr1);
+        */
+        console.log('---do while---');
+
+
+        let i = 0;
+        do {
+            r1 = Math.floor(Number(Math.random() * 49) + 1);  //取亂數
+            result = arr1.indexOf(r1);
+            if (result == -1) {
+                // 沒有重複
+                arr1.push(r1);
+                i++;
+            }
+        } while (i < 6);
+
+        arr1.sort((a, b) => {
+            return a - b;
         }
-        console.log(`大樂透號碼:`+arr1+`特別號:`+arr2);
+        )
+
+        console.log(arr1);
+
+        // 取亂數特別號
+        let r2 = Math.floor(Number(Math.random() * 49 )+ 1);
+        console.log(`特別號:`+r2);
+
+        
+        
     </script>
 </body>
 

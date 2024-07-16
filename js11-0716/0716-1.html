@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立函式時機點
+        // 被動執行
+        // function Name(){...}
+        // 立即執行
+        // 匿名函式=>function(){...}
+        // 箭頭函式=>()=>{...}
+
+
+        // 建立函式:取亂數(為了可通用，所以傳參數最大值)
+        function getRandomNum(max) {
+            return Math.floor(Math.random() * max + 1);
+        }
+
+
+
+
+        // 大樂透=>第一區1-49挑6個號碼，第二區1-49挑1個號碼
+        // 威力彩=>第一區1-38挑6個號碼+第二區1-8挑1個號碼
+        // 今彩539=>第一區1-39挑5個號碼
+        function getLotNum() {
+            // 大樂透
+            let arr1 = [];
+            let i = 0;
+            while (i < 6) {
+                r1 = getRandomNum(49);  //取亂數
+                result = arr1.indexOf(r1);
+                if (result == -1) {
+                    // 沒有重複
+                    arr1.push(r1);
+                    i++;
+                }
+            }
+            arr1.sort((a, b) => {
+                return a - b;
+            }
+            )
+            console.log(arr1);
+
+            // 取亂數特別號
+            let r2 = getRandomNum(49);
+            console.log(`特別號:` + r2);
+
+        }
+        function getLotNum2() {
+            // 威力彩
+            let arr2 = [];
+            i = 0;
+            while (i < 6) {
+                willy = getRandomNum(38);
+                willresult = arr2.indexOf(willy);
+                if (willresult == -1) {
+                    // 沒有重複
+                    arr2.push(willy);
+                    i++;
+                }
+            }
+            arr2.sort((a, b) => {
+                return a - b;
+            }
+            )
+            console.log(arr2);
+            let willSpeNum = getRandomNum(8);
+            console.log(willSpeNum);
+
+        }
+        function getLotNum3() {
+            // 539
+            let arr3 = [];
+            i = 0;
+            while (i < 5) {
+                lot539 = getRandomNum(39);
+                lot539result = arr3.indexOf(lot539);
+                if (lot539result == -1) {
+                    // 沒有重複
+                    arr3.push(lot539);
+                    i++;
+                }
+            }
+            console.log(arr3);
+        }
+
+        // 跳脫字元符號=>\n=>換行
+        let lotNum = prompt(`請輸入樂透號碼代號=>\n1.大樂透2.威力彩3.今彩539`);
+        switch (lotNum) {
+            case '1':
+                // 產生大樂透號碼
+                getLotNum();
+                break;
+            case '2':
+                // 產生威力彩號碼
+                getLotNum2();
+                break;
+            case '3':
+                // 產生539號碼
+                getLotNum3();
+                break;
+            default:
+                console.log('您輸入無效號碼')
+        }
+
+    </script>
+</body>
+
+</html>
