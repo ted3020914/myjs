@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立一個加法運算韓式add()
+        // 當呼叫函式時的參數值個數與參數個數不一定相同時
+        // 可以使用其餘參數寫法
+        // 語法為三個連續小數點=>...
+        function add(...number){
+            let tot=0;
+            console.log(number);
+            // 一般迴圈寫法
+            // for(let i=0;i<number.length;i++){
+            //     tot+=number[i];
+            // }
+
+            // 使用for-of寫法
+            for(let num of number){
+                tot=tot+num;
+            }
+            return tot;
+        }
+        console.log(add(5,3));
+    </script>
+</body>
+</html>

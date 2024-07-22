@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1建立物件樣板成員(類比figma元件概念)
+        // 習慣上物件樣板名稱字首為大寫
+        function Sdata(no, name, htmlScore, cssScore, jsScore) {
+            // this代表物件本身
+            this.sid = no;
+            this.sName = name;
+            this.html = htmlScore;
+            this.css = cssScore;
+            this.javascript = jsScore;
+            this.showData = function () {
+                console.log(`${this.sid}號${this.sName}同學,成績總分為${this.html + this.css + this.javascript}分`);
+            }
+        }
+        // 2.使用物件樣板
+        // 傳值給物件樣板的參數
+        let s1 = new Sdata('s001', '恩恩', 100, 100, 100);
+        // 呼叫物件樣板中的方法
+        s1.showData();
+
+        let s2 = new Sdata('s001', '恩恩', 52, 58, 20);
+        s2.showData();
+
+        let s3 = new Sdata('s001', '恩恩', 66, 88, 99);
+        s3.showData();
+
+        // 全班各科總分
+        // 直接使用s1,s2,s3成員
+        console.log(`HTML班級總成績` + (s1.html + s2.html + s3.html));
+        console.log(`CSS班級總成績` + (s1.css + s2.css + s3.css));
+        console.log(`JS班級總成績` + (s1.javascript + s2.javascript + s3.javascript));
+
+        // 陣列物件
+        console.log('--陣列物件--');
+
+        //宣告陣列
+        let arrObj=[s1,s2,s3];
+        // console.log(arrObj)
+
+        let totHtml=0,totCss=0,totJs=0;
+        for(i=0;i<arrObj.length;i++){
+            totHtml=totHtml+arrObj[i].html;
+            totCss=totCss+arrObj[i].css;
+            totJs+=arrObj[i].javascript;
+        }
+console.log(`HTML總分:`+totHtml);
+console.log(`CSS總分:`+totCss);
+console.log(`JS總分:`+totJs);
+
+
+    </script>
+</body>
+
+</html>
