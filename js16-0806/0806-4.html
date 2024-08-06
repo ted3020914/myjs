@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .item span{
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+    <div class="item">
+        <span onclick="changeToAbout();">關於我</span>
+        <span onclick="changeToExps();">學經歷</span>
+        <span onclick="changeToContact();">聯絡我</span>
+    </div>
+    <hr>
+    <div id="about">大家好我是xxx</div>
+    <div id="exps" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nesciunt vero
+        suscipit, quam voluptatum quae enim minus, libero sint eveniet quidem deleniti temporibus provident quia sequi.
+        Dolor esse est in?</div>
+    <div id="contact" style="display:none;">
+        e-mail:111222@gmail.com<br>
+        phone:09123456789
+    </div>
+
+    <script>
+        aboutDiv='';
+        expsDiv='';
+        contactDiv='';
+
+        function getDiv() {
+            aboutDiv = document.querySelector('#about');
+            expsDiv = document.querySelector('#exps');
+            contactDiv = document.querySelector('#contact');
+
+            aboutDiv.style.display = 'none';
+            expsDiv.style.display = 'none';
+            contactDiv.style.display = 'none';
+        }
+        // 關於我
+        function changeToAbout() {
+            getDiv();
+            aboutDiv.style.display = 'block';
+        }
+        // 學經歷
+        function changeToExps() {
+            getDiv();
+            expsDiv.style.display = 'block';
+        }
+        // 聯絡我
+        function changeToContact() {
+            getDiv();
+            contactDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
