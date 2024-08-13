@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap {
+        display: flex;
+        justify-content: center;
+        margin: 100px;
+    }
+
+    .bob {
+        display: flex;
+        justify-content: center;
+        margin: 100px;
+    }
+
+    img {
+        width: 200px;
+        height: 180px;
+    }
+</style>
+
+<body>
+    <!-- 換圖效果 -->
+    <div class="wrap">
+        <div><img id="pic" src="../imgs/1.jfif" alt=""></div>
+    </div>
+
+    <div class="bob">
+        <div>
+            <img onclick="changePic(2)" onmouseout="restorePic()" src="../imgs/2.jfif" alt="">
+            <img onclick="changePic(3)" onmouseout="restorePic()" src="../imgs/3.jfif" alt="">
+            <img onclick="changePic(4)" onmouseout="restorePic()" src="../imgs/4.jfif" alt="">
+            <img onclick="changePic(5)" onmouseout="restorePic()" src="../imgs/5.jfif" alt="">
+        </div>
+    </div>
+
+    <script>
+
+        
+        function changePic(myPic) {
+            // 取得換圖的目標
+            let pic = document.getElementById('pic');
+            let src = '../imgs/1.jfif';
+            if (myPic == '2') {
+                srcName = '../imgs/2.jfif';
+            } else if (myPic == '3') {
+                srcName = '../imgs/3.jfif';
+            } else if (myPic == '4') {
+                srcName = '../imgs/4.jfif';
+            } else if (myPic == '5') {
+                srcName = '../imgs/5.jfif';
+            }
+            pic.src=srcName;
+        }
+
+        function restorePic() {
+            let pic = document.getElementById('pic');
+            // 不可用空字串寫，會掉圖   pic.src="";
+            pic.src = "../imgs/1.jfif";
+        }
+    </script>
+</body>
+
+</html>
